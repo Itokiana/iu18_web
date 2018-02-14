@@ -1,0 +1,12 @@
+<% include ../pages/header %>
+
+
+<h4>Liste des commentaires</h4>
+<div class="list-groupe">
+    <a class="list-group-item" href="/message/<%= messages.id %>">
+        <h6 class="list-group-item-heading"><%= messages.content %></h6>
+        <p class="list-groupe-item-text"><%= messages.created_at.fromNow() %></p>
+    </a>
+</div>
+
+<% include ../pages/footer %>

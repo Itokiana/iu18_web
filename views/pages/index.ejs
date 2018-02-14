@@ -1,0 +1,21 @@
+<% include header%>
+
+<form class="form-vertical" action="/" method="post">
+    <div class="form-group">
+        <label for="message">Message</label>
+        <textarea name="message" id="message" class="form-control"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-pencil"></i> Envoyer</button>
+</form>
+
+<h4>Liste des commentaires</h4>
+<div class="list-groupe">
+    <% for(message of messages) { %>
+    <a class="list-group-item" href="/message/<%= message.id %>">
+        <h6 class="list-group-item-heading"><%= message.content %></h6>
+        <p class="list-groupe-item-text"><%= message.created_at.fromNow() %></p>
+    </a>
+    <% } %>
+</div>
+
+<% include footer%>
